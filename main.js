@@ -1,4 +1,4 @@
-
+ 
 function toggleMenu(){
   const menu = document.getElementById('navbar');
   menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
