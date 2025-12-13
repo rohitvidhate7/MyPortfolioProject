@@ -7,7 +7,7 @@
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 99%, 40%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
-  --body-font: 'Poppins', sans-serif;
+  --body-font: 'Poppins', sans-serif; 
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
