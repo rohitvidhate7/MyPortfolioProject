@@ -4,7 +4,7 @@ function toggleMenu(){
   menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 }
 
-/*===== MENU SHOW =====*/  
+/*===== MENU SHOW =====*/   
  
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId), 
