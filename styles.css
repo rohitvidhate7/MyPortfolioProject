@@ -4,7 +4,7 @@
 :root {
   --header-height: 3rem;
   --font-semi: 600; 
-  --hue-color: 224; 
+  --hue-color: 224;  
   --first-color: hsl(var(--hue-color), 99%, 40%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
   --body-font: 'Poppins', sans-serif; 
