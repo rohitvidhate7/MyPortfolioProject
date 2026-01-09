@@ -4,7 +4,7 @@
 :root {   
   --header-height: 3rem; 
   --font-semi: 600; 
-  --hue-color: 224;   
+  --hue-color: 244;   
   --first-color: hsl(var(--hue-color), 99%, 40%);
   --second-color: hsl(var(--hue-color), 56%, 12%);
   --body-font: 'Poppins', sans-serif; 
@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  background-color: rgb(213, 220, 238);
+  background: linear-gradient(120deg, #8e7979, #6ac3ff, #e8e8ff);
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
