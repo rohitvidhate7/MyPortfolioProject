@@ -50,29 +50,38 @@ function scrollActive(){
 window.addEventListener('scroll', scrollActive)
 
 // contact using emailjs section //
-(function () {
-    emailjs.init("-qDC7q9BAUxlmZ6Rz");
-  })();
 
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-      emailjs.sendForm(
-        "rohit7276",
-        "template_fdt1vza",
-        this
-      ).then(
-        function () {
-          alert("Message sent successfully!");
-        },
-        function (error) {
-          alert("Failed to send message!");
-          console.log(error);
-        }
-      );
-    });
+  emailjs.init("-qDC7q9BAUxlmZ6Rz");
+
+  const form = document.getElementById("contact-form");
+
+  if (!form) {
+    console.error("Contact form not found");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "rohit7276",
+      "template_fdt1vza",
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully!");
+        form.reset();
+      },
+      function (error) {
+        alert("Failed to send message!");
+        console.error("EmailJS error:", error);
+      }
+    );
+  });
+
+});
  
 /*===== SCROLL REVEAL ANIMATION =====*/
 
