@@ -48,6 +48,31 @@ function scrollActive(){
     })
 }
 window.addEventListener('scroll', scrollActive)
+
+// contact using emailjs section //
+(function () {
+    emailjs.init("-qDC7q9BAUxlmZ6Rz");
+  })();
+
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "rohit7276",
+        "template_fdt1vza",
+        this
+      ).then(
+        function () {
+          alert("Message sent successfully!");
+        },
+        function (error) {
+          alert("Failed to send message!");
+          console.log(error);
+        }
+      );
+    });
  
 /*===== SCROLL REVEAL ANIMATION =====*/
 

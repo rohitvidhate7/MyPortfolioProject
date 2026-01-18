@@ -12,6 +12,9 @@
     <link 
        href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
     rel="stylesheet"/> 
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    
     <title>Rohit`s Portfolio</title>
   </head>
 
@@ -203,22 +206,22 @@
             
             <div class="input-group">
                 <label>Your Name </label>
-                <input type="text" placeholder="Enter your name" required>
+                <input type="text" name="name" placeholder="Enter your name" required>
             </div>
 
             <div class="input-group">
                 <label>Email Address</label>
-                <input type="email" placeholder="Enter your email" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
             </div>
 
             <div class="input-group">
                 <label>mobile Number</label>
-                <input type="text" placeholder="Enter your phone number">
+                <input type="text" name="mobile number" placeholder="Enter your phone number">
             </div>
 
             <div class="input-group">
                 <label>Your Message</label>
-                <textarea rows="5" placeholder="Write your message..." required></textarea>
+                <textarea rows="5" name="message" placeholder="Write your message..." required></textarea>
             </div>
             <button type="submit" class="btn">Send</button>
         </form>
