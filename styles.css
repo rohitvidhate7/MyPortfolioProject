@@ -291,7 +291,7 @@ a {
 }
 
 .about__img img {
-  width: 200px;
+  width: 175px;
   border-radius: 1.5rem;
 }
 
@@ -620,7 +620,7 @@ display:flex;
     padding-top: 2rem;
   }
   .about__img img {
-    width: 300px;
+    width: 275px;
   }
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
