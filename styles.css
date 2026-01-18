@@ -40,7 +40,7 @@ html {
 }
 
 body {
-  background: linear-gradient(120deg, #8e7979, #6ac3ff, #e8e8ff);
+  background: linear-gradient(135deg, #9fbcc2, #c0c4ff , #d77a7a);
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -146,13 +146,13 @@ a {
   padding: 10px 30px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0.01)
+    rgba(62, 173, 252, 0.03),
+    rgba(255, 99, 99, 0.01)
   );
   backdrop-filter: blur(6px) saturate(120%);
   transition: transform 0.28s var(--ease-quick),
   box-shadow 0.28s var(--ease-quick), background 0.28s var(--ease-quick);
-  box-shadow: 0 6px 30px rgba(177, 40, 165, 0.45);
+  box-shadow: 0 6px 30px rgba(255, 100, 100, 0.45);
   z-index: 40;
 }
 
