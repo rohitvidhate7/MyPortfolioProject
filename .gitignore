@@ -1,28 +1,38 @@
-# Node / JS
+# Node modules (if using npm or Node.js)
 node_modules/
 npm-debug.log
 yarn-error.log
 package-lock.json
 yarn.lock
 
-# OS files
+# OS / system files
 .DS_Store
 Thumbs.db
 
-# IDE / Editor
+# Editor / IDE files
 .vscode/
 .idea/
 
-# Environment / Secrets
+# Environment / secret files
 .env
+.env.local
+config.js
+keys.json
 
-# Build / Output
+# Build or output folders (if you ever create them)
 dist/
 build/
 
-# Images / assets you don't want to share (optional)
-Assets/
-
-# Misc
+# Logs and temp files
 *.log
 *.tmp
+*.bak
+
+# Optional: Ignore assets you don't want to push
+Assets/private/
+*.psd
+*.ai
+
+# Ignore backups
+*.zip
+*.rar
