@@ -36,3 +36,7 @@ Assets/private/
 # Ignore backups
 *.zip
 *.rar
+
+# Environment / secret files
+.env
+.env.local
