@@ -304,12 +304,13 @@ font-weight: bold;
 }
 
 .home__title {
-  font-size: var(--big-font-size);
+  font-size: var(--body-font);
   margin-bottom: var(--mb-5);
+  font-size: 57px;
 }
 
 .home__title-color {
-  color: rgb(0, 132, 255);
+  color: rgb(17, 0, 255);
 }
 
 .home__social {
@@ -329,6 +330,22 @@ font-weight: bold;
 color: var(--first-color);
 }
 
+/* Typing text effect */
+.typing {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(47, 0, 255);
+  border-right: 3px solid rgb(0, 0, 0); 
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-cursor 0.7s step-end infinite;
+}
+
+/* Cursor blink animation */
+@keyframes blink-cursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: rgb(57, 39, 39); }
+}
 
 
 /*BUTTONS*/
@@ -348,7 +365,7 @@ color: var(--first-color);
 }
 
 /* ===== ABOUT =====*/
-.aboutmain{
+.main{
   margin-top: -13px;
 }
 
@@ -376,14 +393,22 @@ color: var(--first-color);
 /* Subtitle */
 .about__subtitle {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: #222;
+  font-weight: bold;
+  color: #000000;
   margin-bottom: 1rem;
   text-align: center;
 }
 .aboutdesc{
   text-align: center;
   margin-bottom: 20px;
+}
+
+#about__text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.6;
+  text-align: center;
 }
 /* Highlight important text */
 .about__text span {
@@ -406,13 +431,13 @@ color: var(--first-color);
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--first-color);
+  color: rgb(90, 2, 2);
 }
 
 .about-details p,
 .hobby p {
   font-size: 0.95rem;
-  color: #555;
+  color: #1a1a1a;
   line-height: 1.6;
 }
 
@@ -437,6 +462,12 @@ color: var(--first-color);
     gap: 3rem;
     text-align: left;
   }
+}
+
+#collage{
+  font-size: 24px;
+  color: var(--first-color);
+  margin-right: 8px;
 }
 
 /* ===== SKILLS =====*/
@@ -500,6 +531,7 @@ color: var(--first-color);
 .skills__names {
   display: flex;
   align-items: center;
+  color: rgb(90, 2, 2);
 }
 
 .skills__bar {
@@ -532,7 +564,7 @@ color: var(--first-color);
   border-radius: .5rem;
 }
 
-/* ===== WORK =====*/
+/* ===== project=====*/
 
 .worksection{
   margin-top: -13px;
@@ -570,9 +602,15 @@ color: var(--first-color);
 .project{
   display: flex;
   align-items: center;
-  color: #000000;
+  color: rgb(38, 5, 5);
   font-size: 1.1rem;
+  font-weight: bold;
+}
 
+#pro{
+  color: var(--first-color);
+  font-size: 1.5rem;
+  margin-right: 8px;
 }
 
 /* ===== CONTACT =====*/
@@ -638,7 +676,18 @@ color: var(--first-color);
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.30);
 }
 
+.co{
+  margin-top: 60px;
+}
+
  /* resume */
+
+ #resume{
+  font-size: 19px;
+  color: white;
+  margin-right: 7px;
+}
+
 
 .btn1{
 display:flex;
@@ -646,6 +695,7 @@ display:flex;
   align-items: center;
   width:10%;
   font-size: small;
+  font-weight: var(--font-semi);
   border-radius: 10px;
   padding: .75rem 2.3rem;
   cursor: pointer;
@@ -666,6 +716,7 @@ display:flex;
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
+  margin-top: 60px;
 }
 
 .footer__title {
@@ -686,6 +737,8 @@ display:flex;
 .footer__copy {
   font-size: var(--smaller-font-size);
 }
+
+/*  */
 
 @media screen and (max-width: 320px) {
   .home {

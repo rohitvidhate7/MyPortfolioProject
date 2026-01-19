@@ -122,3 +122,35 @@ sr.reveal(
 sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".skills__data, .work__img, .project", { interval: 200
 });
+
+// Typing effect for Home section
+const typingElement = document.querySelector(".typing");
+const texts = ["Full Stack Developer", "Web Developer", "Frontend Developer"];
+let index = 0;
+let charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+
+function type() {
+  currentText = texts[index];
+  
+  if (isDeleting) {
+    typingElement.textContent = currentText.substring(0, charIndex--);
+  } else {
+    typingElement.textContent = currentText.substring(0, charIndex++);
+  }
+
+  if (!isDeleting && charIndex === currentText.length) {
+    // Pause at the end
+    setTimeout(() => isDeleting = true, 1000);
+  } else if (isDeleting && charIndex === 0) {
+    // Move to next text
+    isDeleting = false;
+    index = (index + 1) % texts.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 150); // speed
+}
+
+// Start typing
+document.addEventListener("DOMContentLoaded", type);
