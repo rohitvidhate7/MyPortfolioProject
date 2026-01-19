@@ -76,6 +76,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// active menu icon on click
+function scrollActive() {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 60;
+    const sectionId = section.getAttribute("id");
+
+    const navLink = document.querySelector(
+      `.nav__menu a[href*="${sectionId}"]`
+    );
+
+    if (!navLink) return;
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLink.classList.add("active");
+    } else {
+      navLink.classList.remove("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", scrollActive);
+
+
+
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
   origin: "top",
