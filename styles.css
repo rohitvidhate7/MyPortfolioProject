@@ -82,7 +82,20 @@ a {
   border-radius: 50%;
 }
 
-.blob-box img:hover {
+/* Smooth default state */
+.blob-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth zoom in */
+.blob-box:hover img {
+  transform: scale(1.12);
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.40);
 }
 
@@ -176,7 +189,9 @@ a {
 
 .nav__link {
   position: relative;
-  color: #f3f2f2;
+    color: rgb(0, 0, 0);
+  font-size: 20px; 
+ 
 }
 
 .nav__link:hover {
@@ -193,16 +208,66 @@ a {
   background-color: var(--first-color);
 }
 
-.nav__logo {
-  color: rgb(0, 0, 0);
-  font-size: 27px; 
-}
+
 
 .nav__toggle {
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+
+
+
+/* hover effect for nav links */
+
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: bold;
+}
+
+.nav__link i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav__link:hover {
+  color:var(--first-color);
+}
+
+.nav__link:hover i {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* nav name */
+#navv{
+font-size: 24px;
+font-weight: bold;
+}
+
+.navv{
+  color: rgb(191, 101, 101);
+  font-size:15px;
+  transition: color 0.3s ease;
+}
+
+.navv i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navv:hover {
+  color:var(--first-color);
+}
+
+.navv:hover i {
+  transform: translateY(-3px) scale(1.1);
+}
+
+
 
 /*Active menu*/
 
@@ -253,8 +318,7 @@ a {
 }
 
 .home__social-icon:hover {
-  color: var(--first-color);
-  
+color: var(--first-color);
 }
 
 /*BUTTONS*/
@@ -339,6 +403,24 @@ a {
   color: var(--first-color);
 }
 
+.ri-supabase-line{
+    font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+
+.ri-reactjs-line{
+    font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+
+.ri-nodejs-line{
+    font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+
 .skills__names {
   display: flex;
   align-items: center;
@@ -355,11 +437,11 @@ a {
 }
 
 .skills__html {
-  width: 95%;
+  width: 75%;
 }
 
 .skills__css {
-  width: 85%;
+  width: 70%;
 }
 
 .skills__js {

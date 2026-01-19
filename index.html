@@ -17,46 +17,62 @@
 
     <title>Rohit`s Portfolio</title>
     <!-- main link -->
-  <link rel="icon" type="image/png" sizes="48x48" href="./Assets/favicon-32x32.png">
-    <!--  -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./Assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon-16x16.png">
-  <link rel="manifest" href="./Assets/favicon-32x32.png">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/favicon-16x16.png?v=2">
+
   </head>
 
   <body>
-    <header class="l-header">
-      <nav class="nav bd-grid">
-        <div>
-          <a href="#footer" class="nav__logo"><i class="ri-user-3-line"></i></a>
-        </div>
+   <header class="l-header">
+  <nav class="nav bd-grid">
+    <div>
+      <a href="#footer" class="nav__link">
+        <i class="ri-user-3-line" id="navv"></i>
+      </a>
+    </div>
 
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">Skills</a>
-            </li>
-            <li class="nav__item">
-              <a href="#work" class="nav__link">Work</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Contact</a>
-            </li>
-          </ul>
-        </div>
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#home" class="nav__link">
+            <i class="ri-home-2-line"></i><span class="navv">Home</span>
+          </a>
+        </li>
 
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="bx bx-menu"></i>
-        </div>
-      </nav>
-    </header>
+        <li class="nav__item">
+          <a href="#about" class="nav__link">
+            <i class="ri-information-line"></i><span class="navv">About</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#skills" class="nav__link">
+            <i class="ri-lightbulb-line"></i> <span class="navv">Skills</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#work" class="nav__link">
+            <i class="ri-briefcase-line"></i><span class="navv">Project</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">
+            <i class="ri-contacts-line"></i> <span class="navv">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="nav__toggle" id="nav-toggle">
+      <i class="bx bx-menu"></i>
+    </div>
+  </nav>
+</header>
+
 
     <main class="l-main">
 
@@ -132,28 +148,28 @@
             <h2 class="skills__subtitle">Profesional Skills</h2>
             <div class="skills__data">
               <div class="skills__names">
-                <i class="bx bxl-html5 skills__icon"></i>
-                <span class="skills__name">HTML</span>
+                 <i class="bx bxl-javascript skills__icon"></i>
+                <span class="skills__name">JAVASCRIPT</span>
               </div>
               <div class="skills__bar skills__html"></div>
               <div>
-                <span class="skills__percentage">95%</span>
+                <span class="skills__percentage">75%</span>
               </div>
             </div>
             <div class="skills__data">
               <div class="skills__names">
-                <i class="bx bxl-css3 skills__icon"></i>
-                <span class="skills__name">CSS</span>
+                <i class="ri-reactjs-line"></i>
+                <span class="skills__name">REACT</span>
               </div>
               <div class="skills__bar skills__css"></div>
               <div>
-                <span class="skills__percentage">85%</span>
+                <span class="skills__percentage">70%</span>
               </div>
             </div>
             <div class="skills__data">
               <div class="skills__names">
-                <i class="bx bxl-javascript skills__icon"></i>
-                <span class="skills__name">JAVASCRIPT</span>
+               <i class="ri-supabase-line"></i>
+                <span class="skills__name">EXPRESS.JS</span>
               </div>
               <div class="skills__bar skills__js"></div>
               <div>
@@ -162,8 +178,8 @@
             </div>
             <div class="skills__data">
               <div class="skills__names">
-                <i class="bx bxs-paint skills__icon"></i>
-                <span class="skills__name">UX/UI</span>
+                <i class="ri-nodejs-line"></i>
+                <span class="skills__name">NODE.JS</span>
               </div>
               <div class="skills__bar skills__ux"></div>
               <div>
@@ -174,10 +190,10 @@
         </div>
       </section>
 
-      <!--===== WORK =====-->
+      <!--===== Project =====-->
 
       <section class="work section" id="work">
-        <h2 class="section-title">Work</h2>
+        <h2 class="section-title">Projects</h2>
 
         <div class="work__container bd-grid">
           <span class="project">Personal Portfolio</span>
