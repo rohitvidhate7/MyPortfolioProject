@@ -1,1 +1,28 @@
-index
+# Node / JS
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Environment / Secrets
+.env
+
+# Build / Output
+dist/
+build/
+
+# Images / assets you don't want to share (optional)
+Assets/
+
+# Misc
+*.log
+*.tmp

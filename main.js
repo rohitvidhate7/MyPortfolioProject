@@ -116,7 +116,7 @@ sr.reveal(
   {}
 );
 sr.reveal(
-  ".about__subtitle, .about__text, .btn1, .container, .blob-box, .about-details, .hobby",
+  ".about__subtitle, .about__text, .btn1, .container, .blob-box, .about-details, .hobby , .aboutdesc, .about__text",
   { delay: 300 }
 );
 sr.reveal(".home__social-icon", { interval: 200 });
