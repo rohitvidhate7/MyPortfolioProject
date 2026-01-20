@@ -83,18 +83,18 @@ const sr = ScrollReveal({
 
 sr.reveal(".home__data, .about__img, .skills__subtitle, .nav");
 sr.reveal(
-  ".about__subtitle, .about__text, .btn1, .container, .blob-box, .about-details, .hobby, .aboutdesc",
+  ".about__subtitle, .about__text, .container, .blob-box, .about-details, .hobby, .aboutdesc",
   { delay: 300 }
 );
 sr.reveal(".home__social-icon", { interval: 200 });
-sr.reveal(".skills__data, .work__img, .project", { interval: 200 });
+sr.reveal(".skills__data, .btn1, .project-img, .project-btn, .project", { interval: 200 });
 
 /*==================== TYPING EFFECT ====================*/
 document.addEventListener("DOMContentLoaded", () => {
   const typingElement = document.querySelector(".typing");
   if (!typingElement) return;
 
-  const texts = ["Full Stack Developer"];
+  const texts = ["Web Developer<>", "Frontend Developer"];
   let index = 0;
   let charIndex = 0;
   let isDeleting = false;
