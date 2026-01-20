@@ -16,67 +16,16 @@ const navLinks = document.querySelectorAll(".nav__link");
 
 function linkAction() {
   const navMenu = document.getElementById("nav-menu");
-  if (navMenu) {
-    navMenu.classList.remove("show");
-  }
+  if (navMenu) navMenu.classList.remove("show");
 }
 
-navLinks.forEach((link) =>
+navLinks.forEach(link =>
   link.addEventListener("click", linkAction)
 );
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
-function scrollActive() {
-  const scrollY = window.pageYOffset;
-
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
-    const sectionId = current.getAttribute("id");
-
-    const navLink = document.querySelector(
-      `.nav__menu a[href*="${sectionId}"]`
-    );
-
-    if (!navLink) return;
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      navLink.classList.add("active");
-    } else {
-      navLink.classList.remove("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", scrollActive);
-
-/*==================== EMAILJS CONTACT FORM ====================*/
-document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("-qDC7q9BAUxlmZ6Rz");
-
-  const form = document.getElementById("contact-form");
-
-  if (!form) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("rohit7276", "template_fdt1vza", form)
-      .then(() => {
-        alert("Message sent successfully!");
-        form.reset();
-      })
-      .catch((error) => {
-        alert("Failed to send message!");
-        console.error("EmailJS error:", error);
-      });
-  });
-});
-
-// active menu icon on click
 function scrollActive() {
   const scrollY = window.pageYOffset;
 
@@ -91,7 +40,7 @@ function scrollActive() {
 
     if (!navLink) return;
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
       navLink.classList.add("active");
     } else {
       navLink.classList.remove("active");
@@ -101,9 +50,30 @@ function scrollActive() {
 
 window.addEventListener("scroll", scrollActive);
 
+/*==================== EMAILJS CONTACT FORM ====================*/
+document.addEventListener("DOMContentLoaded", () => {
+  emailjs.init("-qDC7q9BAUxlmZ6Rz");
 
+  const form = document.getElementById("contact-form");
+  if (!form) return;
 
-/*==================== SCROLL REVEAL ANIMATION ====================*/
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("rohit7276", "template_fdt1vza", form)
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Failed to send message!");
+        console.error("EmailJS error:", error);
+      });
+  });
+});
+
+/*==================== SCROLL REVEAL ====================*/
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
@@ -111,46 +81,42 @@ const sr = ScrollReveal({
   delay: 200,
 });
 
+sr.reveal(".home__data, .about__img, .skills__subtitle, .nav");
 sr.reveal(
-  ".home__data, .about__img, .skills__subtitle, .nav",
-  {}
-);
-sr.reveal(
-  ".about__subtitle, .about__text, .btn1, .container, .blob-box, .about-details, .hobby , .aboutdesc, .about__text",
+  ".about__subtitle, .about__text, .btn1, .container, .blob-box, .about-details, .hobby, .aboutdesc",
   { delay: 300 }
 );
 sr.reveal(".home__social-icon", { interval: 200 });
-sr.reveal(".skills__data, .work__img, .project", { interval: 200
+sr.reveal(".skills__data, .work__img, .project", { interval: 200 });
+
+/*==================== TYPING EFFECT ====================*/
+document.addEventListener("DOMContentLoaded", () => {
+  const typingElement = document.querySelector(".typing");
+  if (!typingElement) return;
+
+  const texts = ["Full Stack Developer"];
+  let index = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentText = texts[index];
+
+    if (isDeleting) {
+      typingElement.textContent = currentText.substring(0, charIndex--);
+    } else {
+      typingElement.textContent = currentText.substring(0, charIndex++);
+    }
+
+    if (!isDeleting && charIndex === currentText.length) {
+      setTimeout(() => (isDeleting = true), 1200);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      index = (index + 1) % texts.length;
+    }
+
+    setTimeout(type, isDeleting ? 60 : 140);
+  }
+
+  type();
 });
-
-// Typing effect for Home section
-const typingElement = document.querySelector(".typing");
-const texts = ["Full Stack Developer", "Web Developer", "Frontend Developer"];
-let index = 0;
-let charIndex = 0;
-let currentText = "";
-let isDeleting = false;
-
-function type() {
-  currentText = texts[index];
-  
-  if (isDeleting) {
-    typingElement.textContent = currentText.substring(0, charIndex--);
-  } else {
-    typingElement.textContent = currentText.substring(0, charIndex++);
-  }
-
-  if (!isDeleting && charIndex === currentText.length) {
-    // Pause at the end
-    setTimeout(() => isDeleting = true, 1000);
-  } else if (isDeleting && charIndex === 0) {
-    // Move to next text
-    isDeleting = false;
-    index = (index + 1) % texts.length;
-  }
-
-  setTimeout(type, isDeleting ? 50 : 150); // speed
-}
-
-// Start typing
-document.addEventListener("DOMContentLoaded", type);
