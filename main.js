@@ -132,4 +132,3 @@ const texts = ["Web Developer<>", "Frontend Developer"];
   type();
 });
 
-// skill bar animation
