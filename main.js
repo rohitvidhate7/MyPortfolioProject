@@ -1,13 +1,11 @@
 /*===== MENU SHOW =====*/
-const showMenu = (toggleId, navId) => {
-  const toggle = document.getElementById(toggleId);
-  const nav = document.getElementById(navId);
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
 
-  if (toggle && nav) {
-   toggle.addEventListener("click", () => nav.classList.toggle("show"));
-  }
-};
-showMenu("nav-toggle", "nav-menu");
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("show-menu");
+});
+
 
 
 
@@ -134,3 +132,4 @@ const texts = ["Web Developer<>", "Frontend Developer"];
   type();
 });
 
+// skill bar animation
