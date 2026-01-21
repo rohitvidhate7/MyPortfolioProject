@@ -4,12 +4,12 @@ const showMenu = (toggleId, navId) => {
   const nav = document.getElementById(navId);
 
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
+   toggle.addEventListener("click", () => nav.classList.toggle("show"));
   }
 };
 showMenu("nav-toggle", "nav-menu");
+
+
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLinks = document.querySelectorAll(".nav__link");
@@ -19,9 +19,8 @@ function linkAction() {
   if (navMenu) navMenu.classList.remove("show");
 }
 
-navLinks.forEach(link =>
-  link.addEventListener("click", linkAction)
-);
+navLinks.forEach(link => link.addEventListener("click", linkAction));
+
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
@@ -31,11 +30,11 @@ function scrollActive() {
 
   sections.forEach(section => {
     const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 60;
+    const sectionTop = section.offsetTop - 80;
     const sectionId = section.getAttribute("id");
 
     const navLink = document.querySelector(
-      `.nav__menu a[href*="${sectionId}"]`
+      `.nav__menu a[href="#${sectionId}"]`
     );
 
     if (!navLink) return;
@@ -48,11 +47,24 @@ function scrollActive() {
   });
 }
 
-window.addEventListener("scroll", scrollActive);
+let ticking = false;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      scrollActive();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
 
 /*==================== EMAILJS CONTACT FORM ====================*/
 document.addEventListener("DOMContentLoaded", () => {
-  emailjs.init("-qDC7q9BAUxlmZ6Rz");
+  initEmailJS();
+  initTypingEffect();
+ emailjs.init({ publicKey: "-qDC7q9BAUxlmZ6Rz" });
+
 
   const form = document.getElementById("contact-form");
   if (!form) return;
@@ -94,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingElement = document.querySelector(".typing");
   if (!typingElement) return;
 
-  const texts = ["Web Developer<>", "Frontend Developer"];
+const texts = ["Web Developer<>", "Frontend Developer"];
   let index = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -102,11 +114,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function type() {
     const currentText = texts[index];
 
-    if (isDeleting) {
-      typingElement.textContent = currentText.substring(0, charIndex--);
-    } else {
-      typingElement.textContent = currentText.substring(0, charIndex++);
-    }
+  if (isDeleting) {
+  typingElement.textContent = currentText.substring(0, Math.max(0, charIndex--));
+} else {
+  typingElement.textContent = currentText.substring(0, charIndex++);
+}
+
 
     if (!isDeleting && charIndex === currentText.length) {
       setTimeout(() => (isDeleting = true), 1200);
@@ -120,3 +133,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   type();
 });
+

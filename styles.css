@@ -49,6 +49,13 @@ body {
   color: var(--second-color);
 }
 
+body.dark {
+  --first-color: #7aa2ff;
+  --second-color: #f1f1f1;
+  background: #0f172a;
+}
+
+
 h1, h2, p {
   margin: 0;
 }
@@ -58,16 +65,32 @@ ul {
   padding: 0;
   list-style: none;
 }
-#home1{
-  display: flex;
-  justify-content: space-around;
+#home1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
+
+@media (max-width: 768px) {
+  #home1 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
 .home__social{
   margin-top: 50px;
 }
 
 a {
   text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--first-color);
+  outline-offset: 3px;
 }
 
 /*--------- my photo-------- */
@@ -127,6 +150,47 @@ a {
   padding-bottom: 2rem;
 }
 
+/* Base blob container (desktop default) */
+.blob-box {
+  position: relative;
+  width: 320px;
+  height: 340px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+
+/*  Mobile devices */
+@media (max-width: 576px) {
+  .blob-box {
+    width: 180px;
+    height: 180px;
+    top: 0;
+    right: 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .blob-box {
+    width: 240px;
+    height: 240px;
+    top: 0;
+    right: 0;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .blob-box {
+    width: 360px;
+    height: 360px;
+  }
+}
 
 
 /*===== LAYOUT =====*/
@@ -155,11 +219,13 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  position: absolute;
-  left: 13%;
+  position: fixed;
+  left: 50%;
   top: 27px;
   height: 48px;
   border-radius: 20px;
+  transform: translateX(-50%);
+  width: min(90%, 1100px);
   padding: 10px 30px;
   background: linear-gradient(
     180deg,
@@ -173,51 +239,48 @@ a {
   z-index: 40;
 }
 
-@media screen and (max-width: 767px) {
+/* Mobile menu - hidden by default */
+@media screen and (max-width: 768px) {
   .nav__menu {
-    background-color: blue;
     position: fixed;
     top: var(--header-height);
-    right: -100%;
-    width: 80%;
-    height: 100%;
-    padding: 2rem;
+    right: -100%; /* hide offscreen */
+    width: 70%;
+    height: 100vh;
     background-color: var(--second-color);
-    transition: .5s;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav__menu.show {
+    right: 0;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav__toggle {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--second-color);
   }
 }
 
-.nav__item {
-  margin-bottom: var(--mb-4);
-}
-
-.nav__link {
-  position: relative;
-    color: rgb(0, 0, 0);
-  font-size: 20px; 
- 
-}
-
-.nav__link:hover {
-  position: relative;
-}
-
-.nav__link:hover::after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 0.18rem;
-  left: 0;
-  top: 2rem;
-  background-color: var(--first-color);
-}
-
-
-
-.nav__toggle {
-  color: var(--second-color);
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Hide toggle on desktop */
+@media screen and (min-width: 769px) {
+  .nav__toggle {
+    display: none;
+  }
 }
 
 /* nav logo  */
@@ -302,7 +365,6 @@ font-weight: bold;
   top: 2rem;
   width: 100%;
   height: 2px;
-  background: red;
   transform: translateX(-50%);
 }
 
@@ -509,7 +571,7 @@ color: var(--first-color);
 
 .skills__data {
   display: flex;
-  width: 40vw;
+ width: 300px;
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -549,6 +611,13 @@ color: var(--first-color);
   align-items: center;
   color: rgb(90, 2, 2);
 }
+
+.skills__names i {
+  font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+
 
 .skills__bar {
   position: absolute;
@@ -683,7 +752,7 @@ color: var(--first-color);
 }
 
 #contact .container {
-  background: rgba(0, 0, 0, 0.05); 
+   background: rgba(0,0,0,0.05);
   backdrop-filter: blur(8px);
   border-radius: 16px;
   padding: 30px;
@@ -714,7 +783,6 @@ color: var(--first-color);
 
 
 .container {
-  background: #faf1f1;
   padding: 30px;
   width: 380px;
   border-radius: 12px;
@@ -752,7 +820,8 @@ color: var(--first-color);
 
 .btn {
   width: 50%;
-  margin: 12px 0px 12px 74px;
+   display: block;
+  margin: 20px auto;
   background-color: var(--first-color);
   color: #f5eeee;
   padding: .75rem 2.3rem;
