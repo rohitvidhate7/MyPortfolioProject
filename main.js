@@ -132,3 +132,12 @@ const texts = ["Web Developer<>", "Frontend Developer"];
   type();
 });
 
+// certificates section//
+
+ScrollReveal().reveal('.certificate-card', {
+  origin: 'bottom',
+  distance: '40px',
+  duration: 800,
+  interval: 200,
+  easing: 'ease-in-out'
+});
