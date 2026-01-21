@@ -252,7 +252,7 @@ button:focus {
   width: min(90%, 1100px);
   height: 48px;
   padding: 10px 30px;
-  border-radius: 20px;
+  border-radius: 42px;
   background: linear-gradient(
     180deg,
     rgba(62, 173, 252, 0.03),
