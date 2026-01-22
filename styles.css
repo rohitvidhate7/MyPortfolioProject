@@ -29,6 +29,48 @@
   }
 }
 
+/* ===== Mobile Background Fix ===== */
+@media (max-width: 768px) {
+
+  body {
+    background: #0f172a; /* professional dark slate */
+    background-image: none !important;
+  }
+
+  section {
+    padding: 3rem 1.2rem;
+  }
+
+  /* Remove decorative blobs / shapes */
+  .blob,
+  .blob-box,
+  .bg-shape,
+  .floating-bg {
+    display: none !important;
+  }
+
+  /* Cards look cleaner on mobile */
+  .project-card,
+  .skills-card,
+  .service-card {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(
+      180deg,
+      #020617 0%,
+      #020617 40%,
+      #020617 100%
+    );
+  }
+}
+
+
 *,
 ::before,
 ::after {
