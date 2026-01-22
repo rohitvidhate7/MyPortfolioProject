@@ -69,6 +69,41 @@
     );
   }
 }
+/* ===== Force White Background on Mobile ===== */
+@media (max-width: 768px) {
+
+  html, body {
+    background: #ffffff !important;
+    color: #111827;
+  }
+
+  section,
+  header,
+  footer,
+  main {
+    background: transparent !important;
+  }
+
+  /* Remove dark overlays & effects */
+  .blob,
+  .blob-box,
+  .bg-shape,
+  .floating-bg,
+  .overlay,
+  .dark-bg {
+    display: none !important;
+  }
+
+  /* Cards – clean light style */
+  .project-card,
+  .skills-card,
+  .service-card,
+  .contact-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  }
+}
 
 
 *,
