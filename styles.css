@@ -458,6 +458,7 @@ button:focus {
     right: -100%;
     left: auto;
     width: 26%;
+
     height: calc(100vh - 65px);
     flex-direction: column;
     padding: 1.5rem;
@@ -571,7 +572,7 @@ button:focus {
 
 .home__data {
   align-self: center;
-  margin-left: 32px;
+  margin-left: 11px;
 }
 
 .home__title {
