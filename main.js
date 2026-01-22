@@ -1,4 +1,5 @@
 /*===== MENU SHOW =====*/
+
 const toggle = document.getElementById("nav-toggle");
 const menu = document.getElementById("nav-menu");
 
@@ -6,10 +7,8 @@ toggle.addEventListener("click", () => {
   menu.classList.toggle("show-menu");
 });
 
-
-
-
 /*==================== REMOVE MENU MOBILE ====================*/
+
 const navLinks = document.querySelectorAll(".nav__link");
 
 function linkAction() {
@@ -19,8 +18,8 @@ function linkAction() {
 
 navLinks.forEach(link => link.addEventListener("click", linkAction));
 
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+
 const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
@@ -56,12 +55,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 /*==================== EMAILJS CONTACT FORM ====================*/
+
 document.addEventListener("DOMContentLoaded", () => {
   initEmailJS();
   initTypingEffect();
- emailjs.init({ publicKey: "-qDC7q9BAUxlmZ6Rz" });
+  emailjs.init({ publicKey: "-qDC7q9BAUxlmZ6Rz" });
 
 
   const form = document.getElementById("contact-form");
@@ -84,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*==================== SCROLL REVEAL ====================*/
+
 const sr = ScrollReveal({
   origin: "top",
   distance: "60px",
@@ -99,12 +99,25 @@ sr.reveal(
 sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".skills__data, .btn1, .project-img, .project-btn, .project", { interval: 200 });
 
+
+// certificates section//
+
+ScrollReveal().reveal('.certificate-card', {
+  origin: 'bottom',
+  distance: '40px',
+  duration: 800,
+  interval: 200,
+  easing: 'ease-in-out'
+});
+
+
 /*==================== TYPING EFFECT ====================*/
+
 document.addEventListener("DOMContentLoaded", () => {
   const typingElement = document.querySelector(".typing");
   if (!typingElement) return;
 
-const texts = ["Web Developer<>", "Frontend Developer"];
+  const texts = ["Web Developer<>", "Frontend Developer"];
   let index = 0;
   let charIndex = 0;
   let isDeleting = false;
@@ -112,11 +125,11 @@ const texts = ["Web Developer<>", "Frontend Developer"];
   function type() {
     const currentText = texts[index];
 
-  if (isDeleting) {
-  typingElement.textContent = currentText.substring(0, Math.max(0, charIndex--));
-} else {
-  typingElement.textContent = currentText.substring(0, charIndex++);
-}
+    if (isDeleting) {
+      typingElement.textContent = currentText.substring(0, Math.max(0, charIndex--));
+    } else {
+      typingElement.textContent = currentText.substring(0, charIndex++);
+    }
 
 
     if (!isDeleting && charIndex === currentText.length) {
@@ -132,12 +145,3 @@ const texts = ["Web Developer<>", "Frontend Developer"];
   type();
 });
 
-// certificates section//
-
-ScrollReveal().reveal('.certificate-card', {
-  origin: 'bottom',
-  distance: '40px',
-  duration: 800,
-  interval: 200,
-  easing: 'ease-in-out'
-});
