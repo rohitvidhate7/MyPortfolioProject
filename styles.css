@@ -20,6 +20,11 @@
   --z-fixed: 100;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+
 @media screen and (min-width: 968px) {
   :root {
     --big-font-size: 3.5rem;
@@ -794,7 +799,7 @@ button:focus {
 
 .skills__data {
   display: flex;
-  width: 400px;
+  width: 340px;
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -934,6 +939,47 @@ button:focus {
 @media (max-width: 768px) {
   .skills__container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Skills Section Mobile Width Fix ===== */
+@media (max-width: 768px) {
+
+  /* Skills section container */
+  .skills,
+  .skills-section {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Skills grid */
+  .skills__container,
+  .skills-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Individual skill cards */
+  .skill-card,
+  .skills__card,
+  .skills-box {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Skill progress bars / content */
+  .skill-bar,
+  .skill-progress {
+    width: 100%;
   }
 }
 
@@ -1094,7 +1140,7 @@ section {
   background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(8px);
   border-radius: 16px;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0 8px 30px rgba(255, 0, 0, 0.15);
 }
 
@@ -1120,7 +1166,7 @@ section {
 
 .container {
   padding: 30px;
-  width: 380px;
+  width: 367px;
   border-radius: 12px;
   margin: auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -1183,6 +1229,52 @@ section {
 
 .co {
   margin-top: -18px;
+}
+
+/* ===== Contact Form Mobile Center Fix ===== */
+@media (max-width: 768px) {
+
+  /* Contact section */
+  .contact,
+  .contact-section {
+    width: 100%;
+    padding: 3rem 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Form wrapper */
+  .contact__container,
+  .contact-container,
+  .contact-content {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Actual form */
+  .contact form,
+  .contact__form {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Inputs & textarea */
+  .contact input,
+  .contact textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Button center */
+  .contact button,
+  .contact .btn {
+    margin: 1.5rem auto 0;
+    display: block;
+  }
 }
 
 /* ===== CERTIFICATES ===== */
