@@ -105,6 +105,70 @@
   }
 }
 
+/* ===== Mobile Center Alignment Fix ===== */
+@media (max-width: 768px) {
+
+  /* Prevent horizontal overflow */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Center every section */
+  section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+  }
+
+  /* Center containers inside sections */
+  .container,
+  .bd-grid,
+  .wrapper,
+  .content,
+  .projects-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center;
+  }
+
+  /* Fix grid layouts */
+  .projects-container,
+  .skills-container,
+  .services-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+  }
+
+  /* Fix flex layouts */
+  .home,
+  .home__container,
+  .about__container,
+  .contact__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Images center */
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Buttons center */
+  .btn,
+  .button,
+  .cta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 *,
 ::before,
