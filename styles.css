@@ -1153,6 +1153,10 @@ section {
 
 #contact {
   background: transparent;
+  margin-top: 10px;
+}
+#sec {
+  margin-top: 10px;
 }
 
 #contact .container {
@@ -1295,6 +1299,7 @@ section {
     display: block;
   }
 }
+
 
 /* ===== CERTIFICATES ===== */
 
