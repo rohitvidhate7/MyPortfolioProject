@@ -455,6 +455,7 @@ button:focus {
     position: fixed;
     top: 28px;
     right: -100%;
+    left: auto;
     width: 26%;
     height: calc(100vh - 65px);
     flex-direction: column;
