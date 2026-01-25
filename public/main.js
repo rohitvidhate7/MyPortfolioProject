@@ -7,16 +7,16 @@ toggle.addEventListener("click", () => {
   menu.classList.toggle("show-menu");
 });
 
-/*==================== REMOVE MENU MOBILE ====================*/
+// /*==================== REMOVE MENU MOBILE ====================*/
 
-const navLinks = document.querySelectorAll(".nav__link");
+// const navLinks = document.querySelectorAll(".nav__link");
 
-function linkAction() {
-  const navMenu = document.getElementById("nav-menu");
-  if (navMenu) navMenu.classList.remove("show");
-}
+// function linkAction() {
+//   const navMenu = document.getElementById("nav-menu");
+//   if (navMenu) navMenu.classList.remove("show");
+// }
 
-navLinks.forEach(link => link.addEventListener("click", linkAction));
+// navLinks.forEach(link => link.addEventListener("click", linkAction));
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
