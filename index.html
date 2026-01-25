@@ -1,89 +1,423 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> 
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="UTF-8" />
+    <meta name="google-site-verification" content="IoqBpYGdlPihudcXfu6zwBE3vQ5hJNJgBTYNVgE7XTM" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rohit Vidhate – Aspiring Full Stack Developer with hands-on experience in MERN stack, frontend development,
+                                                       cloud basics, and data analytics. Passionate about clean code and real-world projects." />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/12.8.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/12.8.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/12.8.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <meta name="keywords" content="Rohit Vidhate,rohit vidhate,vidhate rohit,rohitvidhate,
+          Rohit Vidhate developer, Rohit vidhate portfolio, web developer Rohit Vidhate" />
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+<meta name="description" content="Rohit Vidhate – Web Developer portfolio. Frontend & MERN projects, skills, and contact details." />
+
+    <link rel="stylesheet" href="styles.css" />  
+    <link  href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"rel="stylesheet"/> 
+    <link href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="./Assets/bg.png" type="image/png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Rohit Vidhate",
+  "url": "https://rohitvidhate-7.web.app",
+  "logo": "https://rohitvidhate-7.web.app/Assets/bg.png",
+}
+</script>
+    <title>Rohit Vidhate | Full Stack Developer</title>
+
+ 
+
+    <!-- main link -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./Assets/bg.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Assets/bg.png">
   </head>
+
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <header class="l-header">
+     <nav class="nav bd-grid">
+      <div class="nav__logo">
+        <img src="./Assets/bg.png" alt="Rohit Logo" class="logo-img">
+      </div>
+
+    <div class="nav__menu" id="nav-menu">
+      <ul class="nav__list">
+
+        <li class="nav__item">
+          <a href="#home1" class="nav__link">
+            <i class="ri-home-2-line"></i><span class="navv">Home</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#about" class="nav__link">
+            <i class="ri-information-line"></i><span class="navv">About</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#skills" class="nav__link">
+            <i class="ri-lightbulb-line"></i> <span class="navv">Skills</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#projects" class="nav__link">
+            <i class="ri-briefcase-line"></i><span class="navv">Project</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="#contact" class="nav__link">
+            <i class="ri-contacts-line"></i> <span class="navv">Contact</span>
+          </a>
+        </li>
+        <li class="nav__item">
+          <a href="#certificates" class="nav__link">
+            <i class="ri-verified-badge-line"></i> <span class="navv">Certificates</span>
+          </a>
+
+      </ul>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <div class="nav__toggle" id="nav-toggle">
+      <i class="bx bx-menu"></i>
+    </div>
+  </nav>
+</header>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+
+    <main class="l-main">
+
+      <!--===== HOME =====-->
+
+      <section class="home bd-grid" id="home1">
+        <div class="home__data">
+          <h1 class="home__title">
+           Hi,👋I'm <br> <span class="home__title-color">Rohit Vidhate</span><br>
+              <span class="typing"></span>
+          </h1>
+
+          <!-- resume ----------------------------------- -->
+
+          <a href="./Assets/RohitVidhate CV.pdf" class="button">Download CV</a>        
+            <div class="home__social">
+
+
+         <a href="https://www.linkedin.com/in/rohit-vidhate-323b3a282?utm_source=share_via&utm
+                   _content=profile&utm_medium=member_android" class="home__social-icon"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+           <a href="https://github.com/rohitvidhate7" class="home__social-icon">
+            <i class="bx bxl-github"></i></a>
+           <a href="mailto:rohitvidhate3@gamil.com" class="home__social-icon">
+            <i class="ri-mail-send-fill"></i></a>
+        </div>
+      </div>
+        <div class="blob-box">
+          <img src="./Assets/rohit.jpg" class="blob-img">
+        </div>
+
+      </section> 
+
+      <!--===== ABOUT =====-->
+
+      <section class="main" id="about">
+        <h2 class="section-title">About</h2>
+        <div class="aboutdesc">   
+          <h2 class="about__subtitle">I'm Rohit Vidhate</h2>
+            <p id="about__text">
+              I work with both frontend and backend technologies and enjoy creating seamless digital experiences.</br>
+            </p></div>
+        <div class="about__container bd-grid">
+          <div class="about__img">
+            <img src="./Assets/rohit2.jpg" alt="Rohit Vidhate Profile Photo">
+          </div>
+
+          <div class="intro">
+            <div class="about-details">
+                  <h3><i class="ri-graduation-cap-line" id="collage"></i>  Education</h3>
+                  <p>
+                    Bachelor of Engineering (B.E) in Electronic and computer Engineering<br />
+                    Savitribai Phule Pune University<br>
+                    (2023 – Present)
+                  </p>
+            </div><br>
+            <div class="hobby">
+                  <h3><i class="ri-heart-3-line" id="collage"></i>   Hobbies & Interests</h3>
+                  <p>
+                    <i class="ri-arrow-drop-right-fill"></i> Coding & learning <br />
+                    <i class="ri-arrow-drop-right-fill"></i> Listening to music<br />
+                    <i class="ri-arrow-drop-right-fill"></i> Photography & design<br />
+                   <i class="ri-arrow-drop-right-fill"></i> Exploring new tools and ideas
+                  </p>
+                </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!--===== SKILLS =====-->
+
+      <section class="skills section" id="skills">
+        <h2 class="section-title" id="sec">Skills</h2>
+        <div class="skills__container bd-grid"> 
+       <div class="skills_section">
+            <h2 class="skills__subtitle">Profesional Skills</h2>
+            <div class="skills__data">
+              <div class="skills__names">
+                 <i class="bx bxl-javascript skills__icon"></i>
+                <span class="skills__name">JAVASCRIPT</span>
+              </div>
+              <div class="skills__bar skills__html"></div>
+              <div>
+                <span class="skills__percentage">75%</span>
+              </div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="ri-reactjs-line"></i>
+                <span class="skills__name">REACT</span>
+              </div>
+              <div class="skills__bar skills__css"></div>
+              <div>
+                <span class="skills__percentage">70%</span>
+              </div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names">
+               <i class="bx bxl-nodejs"></i>
+                <span class="skills__name">EXPRESS.JS</span>
+              </div>
+              <div class="skills__bar skills__js"></div>
+              <div>
+                <span class="skills__percentage">65%</span>
+              </div>
+            </div>
+            <div class="skills__data">
+              <div class="skills__names">
+                <i class="ri-brain-line"></i>
+                <span class="skills__name">DSA</span>
+              </div>
+              <div class="skills__bar skills__ux"></div>
+              <div>
+                <span class="skills__percentage">75%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--===== Project =====-->
+
+   <section class="projects section" id="projects">
+  <h2 class="section-title" id="sec">Projects</h2>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-img">
+        <img src="./Assets/htl img.png" alt="Project 1">
+      </div>
+      <div class="project-content">
+        <h3 class="name">Restaurant Website</h3>
+        <p>Restaurant website design with menu, animations and responsive layout.</p>
+       <a href="https://github.com/rohitvidhate7/MyRestaurantsProject" target="_blank" class="project-btn">View Project</a>
+
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img">
+        <img src="./Assets/glry img.png" alt="Project 2">
+      </div>
+      <div class="project-content">
+        <h3 class="name">Gallery</h3>
+        <p>Image gallery project with modern UI and smooth animations.</p>
+       <a href="https://github.com/rohitvidhate7/MyGallery" target="_blank" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img">
+        <img src="./Assets/calci1.png" alt="Project 3">
+      </div>
+      <div class="project-content">
+        <h3 class="name">Calculator App</h3>
+        <p>Simple calculator built using JavaScript with clean UI.</p>
+        <a href="https://github.com/rohitvidhate7/MyCalculator" target="_blank" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img">
+        <img src="./Assets/music img.png" alt="Project 4">
+      </div>
+      <div class="project-content">
+        <h3 class="name">Music Player</h3>
+        <p>Music player application with modern UI and controls.</p>
+       <a href="https://github.com/rohitvidhate7/MyMusic" target="_blank" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+      <div class="project-card">
+      <div class="project-img">
+        <img src="./Assets/book.png" alt="Project 5">
+      </div>
+      <div class="project-content">
+        <h3 class="name">Book Store</h3>
+        <p>Book store website with responsive design and shopping cart.</p>
+        <a href="https://github.com/rohitvidhate7/MyBookStore" target="_blank" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+     <div class="project-card">
+      <div class="project-img">
+        <img src="./Assets/ecom.png" alt="Project 6">
+      </div>
+      <div class="project-content">
+        <h3 class="name">E-Commerce Website</h3>
+        <p>MERN stack E-Commerce website with all features.</p>
+        <a href="https://github.com/rohitvidhate7/E-Commerce-web" target="_blank" class="project-btn">View Project</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+      <!--===== CONTACT =====-->
+
+    <section class="co" id="contact">
+        <h2 class="section-title" id="sec">Contact Us</h2>
+
+      <div class="container">
+        <form id="contact-form" class="contact-form">
+            
+            <div class="input-group">
+                <label>Your Name </label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" name="mobile" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="input-group">
+                <label>Your Message</label>
+                <textarea rows="5" name="message" placeholder="Write your message..." required></textarea>
+            </div>
+            <button type="submit" name="submit" class="btn">Send</button>
+        </form>
+    </div>
+    </section>
+
+  <!--===== CERTIFICATES =====-->
+
+<section class="certificates section" id="certificates">
+  <h2 class="section-title" id="sec">Certificates</h2>
+
+  <div class="certificates-container">
+    
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/cert1.jpg" alt="TCS iON Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>Front-End Web Development</h3>
+        <p>Certified Front-End Web Developer skilled in HTML, CSS, JavaScript, and responsive web design.</p>
+        <a href="./Assets/cert1.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+    <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/cert2.jpg" alt="TCS iON Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>TCS iON Young Professional</h3>
+        <p>TCS iON certified, equipped with essential employability, technical, and professional skills.</p>
+        <a href="./Assets/cert2.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+    <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/cert3.jpg" alt="HP Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>Data Science and Analytics</h3>
+        <p>Certified in HP Data Science and Analytics with practical knowledge of data analysis.</p>
+        <a href="./Assets/cert3.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/cert4.jpg" alt="Free Code Camp Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>Fundamentals C# With Microsoft</h3>
+        <p>Certified in Microsoft C# Fundamentals with knowledge of OOP concepts and application development.</p>
+        <a href="./Assets/cert4.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/cert5.jpg" alt="AWS Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>Solution Architect Job Simulation</h3>
+        <p>AWS Solution Architecture Job Simulation certified by Forage, skilled in cloud solution design and implementation.</p>
+        <a href="./Assets/cert5.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+     <div class="certificate-card">
+      <div class="certificate-img">
+        <img src="./Assets/cert6.jpg" alt="TATA Certificate">
+      </div>
+      <div class="certificate-content">
+        <h3>GenAI-Powered Data Analytics</h3>
+        <p>Forage Certified in Tata GenAI-Powered Data Analytics with hands-on experience in data analysis and AI-driven insights</p>
+        <a href="./Assets/cert6.jpg" target="_blank" class="cert-btn">View Certificate</a>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+    <!--===== FOOTER =====-->
+
+    <footer class="footer" id="footer">
+      <p class="footer__title">Rohit Vidhate</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com" class="footer__icon"><i class="ri-facebook-fill"></i></i></a>
+        <a href="mailto:rohitvidhate3@gmai.com" class="footer__icon"><i class="ri-mail-send-fill"></i></a>
+        <a href="https://www.threads.com/?hl=en" class="footer__icon"><i class="ri-twitter-x-line"></i></a>
+      </div>
+      <p class="footer__copy">&#169; All rigths reserved</p>
+    </footer>
+
+    
+     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+     <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="main.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
+      <script>
+      AOS.init({ duration: 800, easing: 'ease-in-out' });
+      </script>
+  
   </body>
 </html>
