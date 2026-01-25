@@ -24,6 +24,14 @@
   box-sizing: border-box;
 }
 
+.profile-link {
+ color: #000000;
+ font-weight: 600;
+  text-decoration: none;
+}
+.profile-link:hover {
+  text-decoration: underline;
+}
 
 @media screen and (min-width: 968px) {
   :root {
