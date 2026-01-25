@@ -418,5 +418,28 @@
       <script>
       AOS.init({ duration: 800, easing: 'ease-in-out' });
       </script>
+      <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCVCMooCPlzsxItvDJApWfh3MWGoAr_MoM",
+    authDomain: "rohit-portfolio-7.firebaseapp.com",
+    projectId: "rohit-portfolio-7",
+    storageBucket: "rohit-portfolio-7.firebasestorage.app",
+    messagingSenderId: "992079827054",
+    appId: "1:992079827054:web:666c184de118b8c3e9167f",
+    measurementId: "G-3J0962C49X"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
   </body>
 </html>
