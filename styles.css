@@ -383,6 +383,7 @@ button:focus {
   display: grid;
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
+  gap: 45px;
 }
 
 .l-header {
@@ -398,6 +399,7 @@ button:focus {
 /*===== NAV=====*/
 
 .nav {
+  margin-top: -10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -405,9 +407,9 @@ button:focus {
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: min(90%, 1100px);
+  width: min(85%, 1100px);
   height: 48px;
-  padding: 10px 30px;
+  padding: 10px 31px;
   border-radius: 42px;
   background: linear-gradient(
     180deg,
@@ -484,10 +486,11 @@ button:focus {
   }
 
   .nav {
-    height: 64px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: -10px;
   }
 
   .nav__logo img {
@@ -779,6 +782,7 @@ button:focus {
 .about__img img {
   width: 220px;
   border-radius: 1.5rem;
+  margin-left: 5px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.4s ease,
@@ -858,6 +862,12 @@ button:focus {
 }
 
 .ri-brain-line {
+  font-size: 2rem;
+  margin-right: var(--mb-2);
+  color: var(--first-color);
+}
+
+.ri-nodejs-line {
   font-size: 2rem;
   margin-right: var(--mb-2);
   color: var(--first-color);
@@ -1264,10 +1274,9 @@ section {
   margin-top: -18px;
 }
 
-/* ===== Contact Form Mobile Center Fix ===== */
 @media (max-width: 768px) {
 
-  /* Contact section */
+
   .contact,
   .contact-section {
     width: 100%;
@@ -1275,7 +1284,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* Form wrapper */
+  
   .contact__container,
   .contact-container,
   .contact-content {
@@ -1287,14 +1296,13 @@ section {
     align-items: center;
   }
 
-  /* Actual form */
+
   .contact form,
   .contact__form {
     width: 100%;
     margin: 0 auto;
   }
 
-  /* Inputs & textarea */
   .contact input,
   .contact textarea {
     width: 100%;
@@ -1302,7 +1310,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* Button center */
+
   .contact button,
   .contact .btn {
     margin: 1.5rem auto 0;
@@ -1412,8 +1420,6 @@ section {
   transform: scale(0.96);
 }
 
-/* ===== RESPONSIVE ===== */
-
 @media (max-width: 480px) {
   .certificate-content {
     padding: 1.2rem;
@@ -1473,7 +1479,7 @@ section {
   }
 }
 
-/* ===== Footer Mobile Responsive ===== */
+
 @media (max-width: 768px) {
 
   footer,
@@ -1485,7 +1491,7 @@ section {
     box-sizing: border-box;
   }
 
-  /* Footer main container */
+
   .footer__container,
   .footer-container,
   .footer-content {
@@ -1495,7 +1501,6 @@ section {
     gap: 1.2rem;
   }
 
-  /* Footer text */
   footer p,
   .footer p {
     font-size: 0.9rem;
@@ -1504,13 +1509,13 @@ section {
     color: #374151;
   }
 
-  /* Footer links */
+
   .footer a {
     color: #2563eb;
     text-decoration: none;
   }
 
-  /* Social icons */
+
   .footer__social,
   .footer-social {
     display: flex;
@@ -1524,7 +1529,6 @@ section {
     font-size: 1.4rem;
   }
 
-  /* Copyright */
   .footer__copy,
   .copyright {
     font-size: 0.8rem;
