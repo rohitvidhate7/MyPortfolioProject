@@ -33,11 +33,11 @@
   }
 }
 
-/* ===== Mobile Background Fix ===== */
+
 @media (max-width: 768px) {
 
   body {
-    background: #0f172a; /* professional dark slate */
+    background: #0f172a;
     background-image: none !important;
   }
 
@@ -45,7 +45,7 @@
     padding: 3rem 1.2rem;
   }
 
-  /* Cards look cleaner on mobile */
+
   .project-card,
   .skills-card,
   .service-card {
@@ -65,7 +65,7 @@
     );
   }
 }
-/* ===== Force White Background on Mobile ===== */
+
 @media (max-width: 768px) {
 
   html, body {
@@ -80,7 +80,7 @@
     background: transparent !important;
   }
 
-  /* Remove dark overlays & effects */
+
   .blob,
   .blob-box,
   .bg-shape,
@@ -90,7 +90,7 @@
     display: none !important;
   }
 
-  /* Cards – clean light style */
+
   .project-card,
   .skills-card,
   .service-card,
@@ -101,16 +101,16 @@
   }
 }
 
-/* ===== Mobile Center Alignment Fix ===== */
+
 @media (max-width: 768px) {
 
-  /* Prevent horizontal overflow */
+
   html, body {
     width: 100%;
     overflow-x: hidden;
   }
 
-  /* Center every section */
+
   section {
     width: 100%;
     max-width: 100%;
@@ -120,7 +120,7 @@
     box-sizing: border-box;
   }
 
-  /* Center containers inside sections */
+
   .container,
   .bd-grid,
   .wrapper,
@@ -131,7 +131,7 @@
     justify-content: center;
   }
 
-  /* Fix grid layouts */
+
   .projects-container,
   .skills-container,
   .services-container {
@@ -140,7 +140,7 @@
     place-items: center;
   }
 
-  /* Fix flex layouts */
+
   .home,
   .home__container,
   .about__container,
@@ -150,13 +150,12 @@
     text-align: center;
   }
 
-  /* Images center */
   img {
     display: block;
     margin: 0 auto;
   }
 
-  /* Buttons center */
+
   .btn,
   .button,
   .cta {
@@ -353,10 +352,8 @@ button:focus {
   }
 }
 
-/* ===== Blob Box Image Mobile Fix ===== */
 @media (max-width: 768px) {
 
-  /* Make sure blob box is visible */
   .blob-box {
     display: flex !important;
     justify-content: center;
@@ -369,7 +366,7 @@ button:focus {
     top: 0;
   }
 
-  /* Blob image */
+
   .blob-box img {
     display: block !important;
     width: 100%;
@@ -475,51 +472,63 @@ button:focus {
 }
 
 @media (max-width: 768px) {
-  .nav .nav__menu {
-    position: fixed;
-    top: 28px;
-    right: -100%;
-    left: auto;
-    width: 26%;
 
-    height: calc(100vh - 65px);
-    flex-direction: column;
-    padding: 1.5rem;
-    background: linear-gradient(
-      180deg,
-      rgba(62, 173, 252, 0.03),
-      rgba(255, 99, 99, 0.01)
-    );
-    transition: right 0.4s ease;
+  /* Header & nav */
+  .l-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #fff;
   }
+
+  .nav {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__logo img {
+    width: 40px;
+  }
+
+
+  .nav__menu {
+    position: fixed;
+    top: 64px;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background:white;
+    padding: 2rem 1.5rem;
+    transition: left 0.4s ease;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.15);
+    margin-left: -25px;
+  }
+
 
   .nav__menu.show-menu {
-    right: 0;
+    left: 0;
   }
+
 
   .nav__list {
+    display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
 
-  .nav__toggle {
+  .nav__item {
+    font-size: 1.2rem;
+  }
+
+   .nav__toggle {
+    font-size: 1.8rem;
+    cursor: pointer;
     display: block;
   }
-}
-
-@media (min-width: 769px) {
-  .nav__toggle {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .nav__toggle {
-    display: none;
-  }
-}
-
-/* nav logo  */
 
 .nav__logo img.logo-img {
   width: 50px;
@@ -584,6 +593,8 @@ button:focus {
 .navv:hover i {
   transform: translateY(-3px) scale(1.1);
 }
+}
+
 
 /*===== HOME =====*/
 

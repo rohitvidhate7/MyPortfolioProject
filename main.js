@@ -1,22 +1,10 @@
 /*===== MENU SHOW =====*/
+const toggle = document.getElementById('nav-toggle');
+const menu = document.getElementById('nav-menu');
 
-const toggle = document.getElementById("nav-toggle");
-const menu = document.getElementById("nav-menu");
-
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("show-menu");
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('show-menu');
 });
-
-// /*==================== REMOVE MENU MOBILE ====================*/
-
-// const navLinks = document.querySelectorAll(".nav__link");
-
-// function linkAction() {
-//   const navMenu = document.getElementById("nav-menu");
-//   if (navMenu) navMenu.classList.remove("show");
-// }
-
-// navLinks.forEach(link => link.addEventListener("click", linkAction));
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
