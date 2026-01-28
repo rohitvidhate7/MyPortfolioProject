@@ -404,19 +404,15 @@ button:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position:absolute;
   top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(85%, 1100px);
+  left: 15%;
+  background-color: rgba(255, 255, 255, 0.315);
+  /* transform: translateX(-50%); */
+  width: min(100%, 1100px);
   height: 48px;
   padding: 10px 31px;
-  border-radius: 42px;
-  background: linear-gradient(
-    180deg,
-    rgba(62, 173, 252, 0.03),
-    rgba(255, 99, 99, 0.01)
-  );
+  border-radius: 20px;
   backdrop-filter: blur(6px) saturate(120%);
   box-shadow: 0 6px 30px rgba(255, 100, 100, 0.45);
   z-index: 40;
@@ -487,11 +483,13 @@ button:focus {
   }
 
   .nav {
-    height: 45px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: -10px;
+    left:1%;
+    width: 98%;
   }
 
   .nav__logo img {
@@ -509,7 +507,7 @@ button:focus {
     padding: 2rem 1.5rem;
     transition: left 0.4s ease;
     box-shadow: 5px 0 10px rgba(0,0,0,0.15);
-    margin-left: -35px;
+    margin-left: -20px;
   }
 
 
@@ -634,10 +632,12 @@ button:focus {
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
   color: var(--second-color);
+    transition: all 0.4s ease;
 }
 
 .home__social-icon:hover {
   color: var(--first-color);
+  
 }
 
 @media (max-width: 768px) {
@@ -1449,6 +1449,7 @@ section {
   color: #fff;
   padding: 60px 20px 30px;
   position: relative;
+  margin-top: 30px;
 }
 
 .footer-container {
