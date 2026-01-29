@@ -609,7 +609,7 @@ button:focus {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-right: -38px;
+    margin-right: 0px;
   }
 
   .nav__item {
@@ -1222,7 +1222,6 @@ section {
 
 .container {
   width: 328px;
-
 }
 
 .contact-form .input-group {
