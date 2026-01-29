@@ -1,13 +1,14 @@
-/*===== MENU SHOW =====*/
-const toggle = document.getElementById('nav-toggle');
-const menu = document.getElementById('nav-menu');
+/* ==================== MENU TOGGLE ==================== */
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
 
-toggle.addEventListener('click', () => {
-  menu.classList.toggle('show-menu');
-});
+if (toggle && menu) {
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("show-menu");
+  });
+}
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-
+/* ==================== SCROLL ACTIVE LINK ==================== */
 const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
@@ -43,65 +44,64 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/*==================== EMAILJS CONTACT FORM ====================*/
-
+/* ==================== EMAILJS + TYPING INIT ==================== */
 document.addEventListener("DOMContentLoaded", () => {
-  initEmailJS();
-  initTypingEffect();
-  emailjs.init({ publicKey: "-qDC7q9BAUxlmZ6Rz" });
-
+  /* EMAILJS INIT */
+  if (window.emailjs) {
+    emailjs.init({ publicKey: "-qDC7q9BAUxlmZ6Rz" });
+  }
 
   const form = document.getElementById("contact-form");
-  if (!form) return;
+  if (form) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
 
-  form.addEventListener("submit", e => {
-    e.preventDefault();
+      emailjs
+        .sendForm("rohit7276", "template_fdt1vza", form)
+        .then(() => {
+          alert("Message sent successfully!");
+          form.reset();
+        })
+        .catch(error => {
+          alert("Failed to send message!");
+          console.error("EmailJS error:", error);
+        });
+    });
+  }
 
-    emailjs
-      .sendForm("rohit7276", "template_fdt1vza", form)
-      .then(() => {
-        alert("Message sent successfully!");
-        form.reset();
-      })
-      .catch(error => {
-        alert("Failed to send message!");
-        console.error("EmailJS error:", error);
-      });
+  typingEffect();
+});
+
+/* ==================== SCROLL REVEAL ==================== */
+if (window.ScrollReveal) {
+  const sr = ScrollReveal({
+    origin: "top",
+    distance: "60px",
+    duration: 2000,
+    delay: 200,
   });
-});
 
-/*==================== SCROLL REVEAL ====================*/
+  sr.reveal(".home__data, .about__img, .skills__subtitle, .skills__text, .skills__img, .contact__input");
+  sr.reveal(
+    ".about__subtitle, .about__text, .container, .blob-box, .about-details, .hobby, .aboutdesc",
+    { delay: 300 }
+  );
+  sr.reveal(".home__social-icon", { interval: 200 });
+  sr.reveal(".skills__data, .btn1, .project-img, .project-btn, .project , #skills, .skills-container, .skill2", {
+    interval: 200,
+  });
 
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 2000,
-  delay: 200,
-});
+  ScrollReveal().reveal(".certificate-card", {
+    origin: "bottom",
+    distance: "40px",
+    duration: 800,
+    interval: 200,
+    easing: "ease-in-out",
+  });
+}
 
-sr.reveal(".home__data, .about__img, .skills__subtitle, .nav");
-sr.reveal(
-  ".about__subtitle, .about__text, .container, .blob-box, .about-details, .hobby, .aboutdesc",
-  { delay: 300 }
-);
-sr.reveal(".home__social-icon", { interval: 200 });
-sr.reveal(".skills__data, .btn1, .project-img, .project-btn, .project", { interval: 200 });
-
-
-// certificates section//
-
-ScrollReveal().reveal('.certificate-card', {
-  origin: 'bottom',
-  distance: '40px',
-  duration: 800,
-  interval: 200,
-  easing: 'ease-in-out'
-});
-
-
-/*==================== TYPING EFFECT ====================*/
-
-document.addEventListener("DOMContentLoaded", () => {
+/* ==================== TYPING EFFECT ==================== */
+function typingEffect() {
   const typingElement = document.querySelector(".typing");
   if (!typingElement) return;
 
@@ -113,12 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function type() {
     const currentText = texts[index];
 
-    if (isDeleting) {
-      typingElement.textContent = currentText.substring(0, Math.max(0, charIndex--));
-    } else {
-      typingElement.textContent = currentText.substring(0, charIndex++);
-    }
-
+    typingElement.textContent = isDeleting
+      ? currentText.substring(0, charIndex--)
+      : currentText.substring(0, charIndex++);
 
     if (!isDeleting && charIndex === currentText.length) {
       setTimeout(() => (isDeleting = true), 1200);
@@ -131,18 +128,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   type();
-});
+}
 
-// footer date update
+/* ==================== BACK TO TOP ==================== */
+const backToTop = document.getElementById("backToTop");
 
-  const backToTop = document.getElementById("backToTop");
-
+if (backToTop) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
+    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
   backToTop.addEventListener("click", () => {
@@ -151,3 +144,4 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
   });
+}
