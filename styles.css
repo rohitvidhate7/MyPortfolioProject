@@ -69,7 +69,8 @@
 @media (max-width: 768px) {
 
   html, body {
-    background: #ffffff !important;
+    background-image: url(./Assets/bg1.jpg);
+    background-position: center;
     color: #111827;
   }
 
@@ -1013,7 +1014,7 @@ button:focus {
 
   .section-title {
     font-size: 1.9rem;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
   }
 
   .skills-container {
@@ -1699,4 +1700,36 @@ section {
   .home__img {
     width: 450px;
   }
+}
+
+
+/* pop up */
+
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 280px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup.success {
+  background: linear-gradient(135deg, #28a745, #218838);
+}
+
+.popup.error {
+  background: linear-gradient(135deg, #dc3545, #c82333);
 }

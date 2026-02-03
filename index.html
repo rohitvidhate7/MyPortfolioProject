@@ -162,6 +162,11 @@
     </div>
 
     <div class="skill-card">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+      <h3>Tailwind CSS</h3>
+      </div>
+
+    <div class="skill-card">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
       <h3>JavaScript</h3>
     </div>
@@ -401,35 +406,61 @@
 
       <!--===== CONTACT =====-->
 
-    <section class="co" id="contact">
-        <h2 class="section-title" id="sec">Contact Us</h2>
+  <section class="co" id="contact">
+  <h2 class="section-title">Contact Us</h2>
 
-      <div class="container">
-        <form id="contact-form" class="contact-form">
-            
-            <div class="input-group">
-                <label>Your Name </label>
-                <input type="text" name="name" placeholder="Enter your name" required>
-            </div>
+  <div class="container">
+    <form id="contact-form" class="contact-form" novalidate>
+    <input type="hidden" name="access_key" value="b34da8bb-c168-4c43-9e46-4e32b855c70b">
 
-            <div class="input-group">
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="Enter your email" required>
-            </div>
+      <div class="input-group">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
 
-            <div class="input-group">
-                <label>Mobile Number</label>
-                <input type="tel" name="mobile" placeholder="Enter your phone number" required>
-            </div>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
 
-            <div class="input-group">
-                <label>Your Message</label>
-                <textarea rows="5" name="message" placeholder="Write your message..." required></textarea>
-            </div>
-            <button type="submit" name="submit" class="btn">Send</button>
-        </form>
-    </div>
-    </section>
+      <div class="input-group">
+        <label for="mobile">Mobile Number</label>
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          placeholder="Enter your phone number"
+        />
+      </div>
+
+      <div class="input-group">
+        <label for="message">Your Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Write your message..."
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn">Send</button>
+
+    </form>
+  </div>
+</section>
 
   <!--===== CERTIFICATES =====-->
 
@@ -559,6 +590,7 @@
 
     
      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+     
      <script src="https://unpkg.com/scrollreveal"></script>
       <script src="main.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
@@ -566,5 +598,7 @@
       AOS.init({ duration: 800, easing: 'ease-in-out' });
       </script>
   
+
   </body>
+  <div id="popup" class="popup"></div>
 </html>

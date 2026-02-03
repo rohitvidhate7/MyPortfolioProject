@@ -45,32 +45,55 @@ window.addEventListener("scroll", () => {
 });
 
 /* ==================== EMAILJS + TYPING INIT ==================== */
-document.addEventListener("DOMContentLoaded", () => {
-  /* EMAILJS INIT */
-  if (window.emailjs) {
-    emailjs.init({ publicKey: "-qDC7q9BAUxlmZ6Rz" });
-  }
+document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
+  const button = form.querySelector(".btn");
+  const popup = document.getElementById("popup");
 
-      emailjs
-        .sendForm("rohit7276", "template_fdt1vza", form)
-        .then(() => {
-          alert("Message sent successfully!");
-          form.reset();
-        })
-        .catch(error => {
-          alert("Failed to send message!");
-          console.error("EmailJS error:", error);
-        });
-    });
+  function showPopup(message, type) {
+    popup.textContent = message;
+    popup.className = `popup ${type} show`;
+
+    setTimeout(() => {
+      popup.className = "popup";
+    }, 3000);
   }
 
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: new FormData(form)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        showPopup("✅ Message sent successfully!", "success");
+        form.reset();
+      } else {
+        showPopup("❌ Something went wrong. Try again.", "error");
+      }
+    } catch (error) {
+      showPopup("❌ Network error. Please try again.", "error");
+      console.error(error);
+    }
+
+    button.disabled = false;
+    button.textContent = "Send";
+  });
+
+  // Initialize typing effect
   typingEffect();
+
 });
+
 
 /* ==================== SCROLL REVEAL ==================== */
 if (window.ScrollReveal) {
@@ -101,6 +124,7 @@ if (window.ScrollReveal) {
 }
 
 /* ==================== TYPING EFFECT ==================== */
+
 function typingEffect() {
   const typingElement = document.querySelector(".typing");
   if (!typingElement) return;
